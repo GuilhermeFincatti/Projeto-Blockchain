@@ -58,6 +58,8 @@ export default function AuctionList({ auctions }) {
           className="auction-card"
         >
           <h3>{a.description}</h3>
+          <p><strong>Tempo de início:</strong> {new Date(a.startTime * 1000).toLocaleString()}</p>
+          <p><strong>Tempo de término:</strong> {new Date(a.endTime * 1000).toLocaleString()}</p>
           <p><strong>Maior lance:</strong> {ethers.formatEther(a.highestBid.toString())} ETH</p>
           <p><strong>Vendedor:</strong> {a.seller.slice(0, 6)}...{a.seller.slice(-4)}</p>
           <p><b>Status:</b> {a.ended ? "Encerrado" : "Ativo"}</p>
